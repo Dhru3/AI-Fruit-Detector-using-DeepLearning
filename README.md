@@ -66,35 +66,46 @@ fruits-360/
 ```
 Ensure the dataset is stored in the right file and plug it in the correct places. 
 
-## 🏗️ Libraries Used
-- **TensorFlow/Keras** → For building and training the CNN model
-- **NumPy** → For numerical operations
-- **Matplotlib** → For visualizing training results
+## 📚 Libraries Used
+| Library  | Purpose |
+|----------|---------|
+| `numpy`  | Efficient numerical operations |
+| `opencv` | Image processing, webcam access |
+| `tensorflow` | Deep learning, neural networks |
 
-## 🏋️‍♂️ Model Architecture
-```python
-model = tf.keras.Sequential([
-    tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(128, 128, 3)),
-    tf.keras.layers.MaxPooling2D(2,2),
-    tf.keras.layers.Conv2D(64, (3,3), activation='relu'),
-    tf.keras.layers.MaxPooling2D(2,2),
-    tf.keras.layers.Conv2D(128, (3,3), activation='relu'),
-    tf.keras.layers.MaxPooling2D(2,2),
-    tf.keras.layers.Flatten(),
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(141, activation='softmax')
-])
-```
+## 🏗️ Methodology
+The fruit detection system follows these key steps:
+1. **Importing Libraries:** TensorFlow for deep learning, OpenCV for image processing.
+2. **Loading Pre-trained Model:** A model trained on fruit datasets is used.
+3. **Capturing Image Frames:** Webcam captures live video/images for processing.
+4. **Preprocessing:** Frames are resized, color-adjusted, and noise is reduced.
+5. **Detection & Classification:** The processed frame is analyzed using the model.
+6. **Visualization:** The detected fruit is marked with bounding boxes & labels.
+7. **Real-time Processing:** The system continuously processes frames in a loop.
+
 ## 🦾 Uses and Applications
-This project is useful for:
-- Automated fruit recognition in supermarkets or agricultural settings.
-- Educational purposes, teaching machine learning concepts through image classification.
-- Dietary applications, integrating AI to assist with food tracking and nutrition analysis.
-  
+1. **Agriculture & Farming**
+   - Automated **fruit sorting & grading**.
+   - **Disease monitoring** in orchards.
+   - **Precision harvesting** for better crop yield.
+
+2. **Retail & Consumer Applications**
+   - **Smart checkout** systems in grocery stores.
+   - **Freshness tracking** for quality control.
+   - **Personalized food recommendations**.
+
+3. **Research & Development**
+   - **Fruit variety classification**.
+   - **Yield estimation** for better farming decisions.
+   - **Fruit disease detection**.
+
 ## 🚀 Future Improvements
 - Implementing **data augmentation** for better generalization.
 - Trying **Transfer Learning** (e.g., using MobileNet, ResNet).
 - Hyperparameter tuning to optimize the model.
+- **Integration with robotics** for **automated harvesting**.
+- **Mobile app** for instant fruit detection.
+- **More robust model** for extreme lighting conditions.
 
 ## 🏆 Acknowledgments
 - **Fruits-360 Dataset** by Horea Muresan
